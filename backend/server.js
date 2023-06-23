@@ -2,6 +2,7 @@ const express = require("express");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
+const messageRoutes = require("./routes/messageRoutes");
 const { notFound, errorHandler } = require("./middleware/erroMiddleware");
 
 connectDB();
@@ -13,12 +14,10 @@ app.get("/", (request, response) => {
   response.send("API is Runnig");
 });
 
-// app.get("/api/chat", (request, response) => {
-//   response.send(chats);
-// });
-
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
+
+app.use("/api/message", messageRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
