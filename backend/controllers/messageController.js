@@ -38,13 +38,11 @@ const sendMessage = asyncHandler(async (request, response) => {
 });
 const allMessages = asyncHandler(async (request, response) => {
   try {
-    console.log(request.params);
     const messages = await Message.find({
       chat: request.params.chatId,
     })
       .populate("sender", "-password")
       .populate("chat");
-
     response.json(messages);
   } catch (error) {
     response.status(400);
