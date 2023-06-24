@@ -1,11 +1,6 @@
 import React from "react";
 import ScrollableFeed from "react-scrollable-feed";
-import {
-  isSameSender,
-  isLastMessage,
-  isSameSenderMargin,
-  isSameUser,
-} from "../../logic/ChatLogic";
+import { isSameSender, isLastMessage, isSameUser } from "../../logic/ChatLogic";
 import { ChatState } from "../../context/ChatProvider";
 import { Tooltip, Avatar, Text } from "@chakra-ui/react";
 

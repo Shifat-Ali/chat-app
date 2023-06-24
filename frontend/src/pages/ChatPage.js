@@ -10,7 +10,7 @@ const ChatPage = () => {
   const [fetchAgain, setFetchAgain] = useState(true);
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", height: "570px" }}>
       {user && <SideDrawer />}
       <Box w="100%" h="100%" display={"flex"} justifyContent={"space-between"}>
         {user && <MyChats fetchAgain={fetchAgain} />}
